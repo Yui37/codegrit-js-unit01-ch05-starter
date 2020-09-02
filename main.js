@@ -1,41 +1,28 @@
-'use strict';
-
-function keysColor(){
-    const keyColor =document.getElementsByClassName('key');
-    for (let key of keyColor) {
-        key.classList.add('playing')
-    }
+function addRedFrame(e) {
+    const elements =document.querySelector(`.key,[data-key = KeyboardEvent.code]`);
+    // KeyboardEvent.code();
+    for (let  of elements ){
+        kbd.classList.add('playing');
+    };
+    // 押されたキーボード番号を取得する　使う技法　event.keyCode DOM
+    // 押されたキーボードにはクラス属性playingを付与する。 classList.add('playing')
 }
+window.addEventListener('keydown', addRedFrame);
 
-keysColor();
+// function sound(){
+//     document.getElementsByTagName(audio);
+//     if(keydown){}
+// }
+// sound();
 
-function keysColorReset(){
-    const keyColor =document.getElementsByClassName('key');
-    for (let key of keyColor) {
-        key.classList.remove('playing')
-    }
-}
+// const keysResetAction = document.querySelectorAll('[deta-key="resetStyle"]');
 
-keysColorReset();
-
-const keysAction = document.querySelectorAll('[deta-key="addStyle"]');
-
-for (let kbd of keysAction){
-    kbd.addEventListener('click' , evt => {
-        evt.keysDefault();
-        keysColor();
-    });
-}
-
-
-const keysResetAction = document.querySelectorAll('[deta-key="resetStyle"]');
-
-for (let kbd of keysResetAction){
-    kbd.addEventListener('click' , evt => {
-        evt.keysDefault();
-        keysColorReset();
-    });
-}
+// for (let kbd of keysResetAction){
+//     kbd.addEventListener('click' , evt => {
+//         evt.keysDefault();
+//         keysColorReset();
+//     });
+// }
 
 
 
