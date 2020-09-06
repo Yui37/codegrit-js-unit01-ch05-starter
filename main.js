@@ -1,6 +1,5 @@
 function addRedFrame(e) {
-    const elements =document.querySelector(`.key,[data-key = KeyboardEvent.code]`);
-    // KeyboardEvent.code();
+    const elements =document.querySelector(`.key,[data-key = "${event.keyCode}"]`);
     for (let  of elements ){
         kbd.classList.add('playing');
     };
@@ -14,16 +13,3 @@ window.addEventListener('keydown', addRedFrame);
 //     if(keydown){}
 // }
 // sound();
-
-// const keysResetAction = document.querySelectorAll('[deta-key="resetStyle"]');
-
-// for (let kbd of keysResetAction){
-//     kbd.addEventListener('click' , evt => {
-//         evt.keysDefault();
-//         keysColorReset();
-//     });
-// }
-
-
-
-
