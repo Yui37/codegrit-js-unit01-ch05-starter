@@ -7,7 +7,7 @@ function addEffects(e){
 window.addEventListener('keydown', addEffects);
 
 function removeEffects(e){
-    const resetRedFrame = document.querySelector(`div.key.playing[data-key="${e.keyCode}"]`);
+    const resetRedFrame = document.querySelector(`div.key[data-key="${e.keyCode}"]`);
     resetRedFrame.classList.remove('playing');
     const resetSounds = document.querySelector(`audio[data-key="${e.keyCode}"]`);
     resetSounds.pause();
